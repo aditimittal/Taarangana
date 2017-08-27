@@ -1,0 +1,300 @@
+<!-- Large modal -->
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+div#OR {
+    height: 30px;
+    width: 10px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+.registred {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: #FFF;
+  display: none;
+  margin: 100px auto;
+  text-align: center;
+}
+.registred button {
+  width: 100px;
+  background: #3FA6FD;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  color: #FFF;
+}
+.registred h1 {
+  font-size: 1rem;
+}
+
+.register--content {
+  display: none;
+}
+
+.register--content, .login--content {
+  width: 500px;
+  margin: 100px auto;
+}
+.register--content--competitions {
+  width: 500px;
+  margin: 100px auto;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 0px;
+  top: 20px;
+  font-size: 11px;
+  color: #B3BBCE;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.email, .year, .name, .institute, .phone, .userID {
+  position: relative;
+  margin: 20px 0;
+}
+
+.inputText {
+  font-size: 12px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #B3BBCE;
+  outline: none;
+  color: #9390A1;
+  font-weight: 900;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+  top: 2px;
+  bottom: 10px;
+  left: 0px;
+  font-size: 11px;
+  opacity: 1;
+  color: #3FA6FD;
+}
+
+.social {
+  width: 100%;
+  background: #3B5999;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
+.social a {
+  text-decoration: none;
+  color: #FFF;
+}
+.social span i {
+  color: #fff;
+  float: left;
+  line-height: 45px;
+  margin-left: 26px;
+}
+
+.via-email {
+  text-align: center;
+  padding: 20px 0;
+  color: #8291AC;
+}
+
+input[type="submit"] {
+  width: 30%;
+  position: relative;
+  height: 50px;
+  background-color: #3FA6FD;
+  color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 14px 0 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  letter-spacing: .1rem;
+  font-weight: 140;
+  
+}
+
+.login--button {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  color:white;
+}
+.login--button a {
+  background: #3FA6FD;
+  padding: 7px 14px;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  font-color:white;
+}
+
+.login {
+  display: none;
+}
+#forgot{
+  text-align: right;
+  color:grey;
+  padding: 7px 74px;
+}
+#forgot a{
+  text-align: right;
+  color:grey;
+ 
+  text-decoration: none;
+}
+body{width:100%;height:100%;overflow-x:hidden;font-family:'Roboto';position:absolute;top:0;color:#202020;font-weight:normal;font-size:15px;}
+.bg-login{background-image:url(8.jpg);}
+
+
+.body-wrapper{width:100%;height:100%;position:relative;z-index:0;}
+#reg{
+  text-align:right;
+  margin-top: 20px;
+  margin-left: 92%;
+}
+</style>
+</head>
+<body class="bg-login"> 
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="reg">Login/Signup</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Login/Registration </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab"><b>Login</b></a></li>
+                            <li><a href="#Registration" data-toggle="tab">Registeration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal" action="login.php" method="POST">
+                                <div class="email">
+              <input name="email" type="email" autocomplete="off" class="inputText form" required/>
+              <span class="floating-label">Your email</span>
+          </div>
+
+          <div class="year">
+              <input name="userid" type="text" autocomplete="off" class="inputText" required/>
+              <span class="floating-label">Your userID</span>
+          </div>
+          
+
+          <input type="submit" style="font-color:white;"value="Login" name="Login">
+          <span id="forgot"><a href=" ">Forgot your userID?</a></span>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal" action="info.php" method="POST">
+                                <div class="name">
+              <input name="name" type="text" class="inputText" required/>
+              <span class="floating-label">Your name</span>
+            </div>
+                
+            <div class="email">
+              <input name="email" type="email" class="inputText" required/>
+              <span class="floating-label">Your email</span>
+            </div>
+            <div class="phone">
+              <input name="mobile" type="text" class="inputText" required/>
+              <span class="floating-label">Your phone</span>
+            </div>
+           
+            
+
+            <div class="institute">
+              <input name="institution" type="text" class="inputText" required/>
+              <span class="floating-label">Your institute</span>
+            </div>
+          <div class="year">
+              <input name="year" id="year" type="text" class="inputText" required/>
+              <span class="floating-label">Your Year</span>
+            </div>
+            
+            <center>
+            <input type="submit" class="register-buttton" value="Sign Up" name="register" onclick="return Validate()"></center>
+                                </form>
+                            </div>
+                        </div>
+                       <!-- <div id="OR" class="hidden-xs">
+                            OR</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+$('#myModal').modal('show');
+function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+         document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
+
+</script>
+</body>
+</html>
