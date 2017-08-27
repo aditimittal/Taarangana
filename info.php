@@ -38,7 +38,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['mobile'])&&isset
     			$row = mysql_fetch_array($result);
 
 	   
-	  				echo "<div style ='font:21px;color:#FFFFFF;'>Successfully signed up. Your inique id is=". $row['userid']."</div>" ;
+	  				echo "<div style ='font:40px;color:#FFFFFF;'>Successfully signed up. Your inique id is=". $row['userid']."</div>" ;
 
 
 			} 
