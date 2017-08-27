@@ -17,11 +17,11 @@ $row = mysql_fetch_array($result);
 
 if($row['Email']==$email && $row['userid']==$userid)
 {
-    echo"<div style ='color:#FFFFFF;'>Name: ".$row['Name']."<br>E-Mail:".$row['Email']."<br>ID:".$row['userid']."<br>Mobile:".$row['Mobile']."<br>Institution:".$row['Institution']."<br>Year:".$row['Year']."</div>";
+    echo"<div style ='color:#FFFFFF;font-size:50px'><center>Name: ".$row['Name']."<br>E-Mail:".$row['Email']."<br>ID:".$row['userid']."<br>Mobile:".$row['Mobile']."<br>Institution:".$row['Institution']."<br>Year:".$row['Year']."</center></div>";
   }
   
 else
-    echo"<div style ='color:#FFFFFF;'>Sorry, your credentials are not valid, Please try again.</div>";
+    echo"<div style ='color:#FFFFFF;'><center>Sorry, your credentials are not valid, Please try again.</center></div>";
 ?>
 <body background="polygons.jpg">
 </body>
